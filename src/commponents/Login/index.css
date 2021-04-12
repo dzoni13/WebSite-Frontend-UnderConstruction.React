@@ -1,0 +1,51 @@
+.form-group input {
+  height: 35px;
+  margin-bottom: 20px;
+  width: 400px;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 400px;
+  margin: 30px auto;
+}
+
+.login-btn {
+  width: 30%;
+  height: 35px;
+  background-color: white;
+  margin-bottom: 50px;
+}
+
+::placeholder {
+  color: grey;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: grey;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: grey;
+}
+@media only screen and (max-width: 500px) {
+  .form-group input {
+    height: 35px;
+    margin-bottom: 20px;
+    width: 250px;
+  }
+  .login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    margin: 30px auto;
+  }
+}

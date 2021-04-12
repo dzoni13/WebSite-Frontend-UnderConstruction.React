@@ -1,0 +1,12 @@
+.landingPageEventsContainer {
+    min-height: 550px;
+    height: auto;
+    justify-content: center;
+}
+
+.upcomingEventsStyle {
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 100px;
+    padding-top: 150px;
+}

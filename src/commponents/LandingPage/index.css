@@ -1,0 +1,32 @@
+.landingPagePhotoContainer {
+    background-image: url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    padding-top: 100px;
+}
+
+
+.landingPageTextContainer {
+    height: 100%;
+    margin-left: 5em;
+    background-color: #524f4f8a;
+    width: 80%;
+    text-align: center;
+    padding-top: 91px;
+    max-width: 700px;
+    max-height: 400px;
+}
+
+
+
+    .landingPageTextContainer h1 {
+        font-size: 50px;
+    }
+
+    .landingPageTextContainer h3 {
+        font-size: 20px;
+        font-weight: 100;
+    }

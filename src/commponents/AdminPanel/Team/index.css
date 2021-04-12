@@ -1,0 +1,137 @@
+body {
+    padding: 100px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+details {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.15s background linear;
+    &:hover
+
+{
+    background: #d4d1ec;
+}
+
+}
+
+summary {
+    height: 20px;
+    padding: 10px;
+    list-style: none;
+    background: url("https://assets.codepen.io/14179/Info.svg") 11px 11.5px no-repeat;
+    padding-left: 33px;
+}
+
+details p {
+    color: #000;
+    cursor: auto;
+    background: #eee;
+    padding: 15px;
+    width: 250px;
+    position: absolute;
+    left: 0;
+    top: 35px;
+    border-radius: 4px;
+    right: 0;
+    &:before
+
+{
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 12px solid #eee;
+    top: -10px;
+    position: absolute;
+    left: 10px;
+}
+
+}
+
+details[open] p {
+    animation: animateDown 0.2s linear forwards;
+    z-index: 2;
+}
+
+@keyframes animateDown {
+    0% {
+        opacity: 0;
+        transform: translatey(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+
+
+/******************************************CONTAINER MENU CARD PANEL*************************************/
+.menuH3 {
+    text-align: center;
+    font-size: 40px;
+}
+
+.adminMenuPanelWraper {
+    display: inline-flex;
+    width: 88%;
+    margin-left: 5vw;
+    margin-top: 5vh;
+    height: 526px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px 3px;
+}
+
+
+.textArea {
+    height: 100px;
+    resize: none !important;
+    background: #ffffff1f !important;
+    color: #fff !important;
+}
+
+.labelStyle {
+    background-color: #ffffff80 !important;
+    color: #fff !important;
+    font-size: 21px !important;
+    font-weight: 600 !important;
+    padding-bottom: 0px !important;
+    padding-right: 7px !important;
+    padding-left: 7px !important;
+    padding-top: 7px !important;
+}
+
+.adminPanel form input {
+    background: #ffffff1f !important;
+    color: #fff !important;
+}
+
+
+
+.imageContainer {
+    object-fit: contain;
+    height: 111px;
+    padding: 2px;
+}
+
+.cardStyleContainer {
+    width: 70%;
+    height: 100%;
+    overflow: auto;
+    max-height: 550px;
+    margin-top: 5px !important;
+    padding-left: 20px !important;
+}
+
+.adminPanel {
+    width: 27%;
+    max-width: 550px;
+    margin: 40px;
+    margin-top: 15px;
+    margin-left: 20px;
+}

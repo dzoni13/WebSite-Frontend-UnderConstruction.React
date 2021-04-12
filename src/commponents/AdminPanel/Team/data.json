@@ -1,0 +1,37 @@
+{
+  "data": [
+    {
+      "name": "John Jack",
+      "shortDescription": "Walter",
+      "image": "https://socialonbrand.com/wp-content/uploads/2018/10/team-member-3.png"
+    },
+    {
+      "name": "Jacky Evens",
+      "shortDescription": "Event Coordinator",
+      "image": "https://www.hztech.biz/wp-content/themes/hztech/assets/images/team/team-member-4.png"
+    },
+    {
+      "name": "Kris Ward",
+      "shortDescription": "Bartender",
+      "image": "https://hztech.biz/wp-content/themes/hztech/assets/images/team/team-member-1.png"
+    },
+
+    {
+      "name": "Taylor Quill",
+      "shortDescription": "Event Coordinator",
+      "image": "https://www.hztech.biz/wp-content/themes/hztech/assets/images/team/team-member-2.png"
+    },
+
+    {
+      "name": "Zack Smith",
+      "shortDescription": "Great",
+      "image": "https://hztech.biz/wp-content/themes/hztech/assets/images/team/team-member-1.png"
+    },
+
+    {
+      "name": "Jordan Parker",
+      "shortDescription": "Sous Chef",
+      "image": "https://socialonbrand.com/wp-content/uploads/2018/10/team-member-3.png"
+    }
+  ]
+}

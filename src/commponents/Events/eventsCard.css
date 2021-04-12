@@ -1,0 +1,46 @@
+.eventCardContainer {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+    .eventCardContainer p {
+        text-align: center;
+        font-size: 22px;
+        font-family: inherit;
+        padding-top: 15px;
+    }
+
+.eventCardReservationButton {
+    text-align: center;
+    margin-top: 30px;
+}
+
+    .eventCardReservationButton button {
+        background-color: #9c7f5c !important;
+        color: #000;
+    }
+
+.eventCardImgContainer {
+    min-width: 400px;
+    max-height: 400px;
+    height: 100%;
+    right: 100px;
+    position: relative;
+    width: auto;
+}
+
+.timeAndDateEvents {
+    text-align: center;
+}
+
+    .timeAndDateEvents a {
+        color: #fff;
+        font-size: 15px;
+        font-family: inherit;
+        padding-left: 10px;
+        margin-right: 10px;
+    }

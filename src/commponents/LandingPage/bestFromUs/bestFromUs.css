@@ -1,0 +1,53 @@
+.bestFromUsContainer {
+    margin: 30px;
+    text-align: center;
+}
+
+.bestFromUsImgStyle {
+    background-image: url(https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=714&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bestFromUsImgStyle2 {
+    background-image: url(https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=653&q=80 );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.bestFromUsColumns {
+    max-width: 860px;
+    min-height: 460px;
+    padding: 4vw;
+    border: 1vw solid #000;
+    text-align: justify;
+}
+
+.bestFromUsTxtContainer {
+    background-color: #191919;
+}
+
+.bestFromUsTxtContent {
+    margin-top: 10em;
+    text-align: center;
+}
+
+.bestFromUsColumnGridContainer {
+    justify-content: center;
+    margin-top: 50px !important;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .bestFromUsTxtContent {
+        margin-top: 3em;
+        text-align: justify;
+    }
+
+    .bestFromUsColumns {
+        min-height: 300px;
+    }
+}

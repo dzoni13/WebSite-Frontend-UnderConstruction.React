@@ -1,0 +1,105 @@
+.labelCustomStyle {
+    width: auto;
+    height: 36px;
+    left: -8px;
+    background: none !important;
+    font-size: 16px !important;
+    border-color: #ffffff !important;
+    box-shadow: 0px 0px 6px 0px;
+    padding-left: 6px !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    color: #ffffffd6 !important;
+}
+
+.summaryCustomStyle {
+    outline: none;
+    font-weight: 700;
+}
+
+
+/**********************/
+.newCard {
+    height: 50px;
+    background-color: #000 !important;
+    margin: 5px !important;
+    display: flex;
+    box-shadow: 0px 0px 4px 0px;
+    padding: 5px;
+    width: 250px;
+    justify-content: space-between;
+}
+
+.buttonsMenuAdminPanel {
+    height: 100px !important;
+}
+
+.menuAdminPanelCardContent {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.priceContainer {
+    font-size: 17px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.adminPanelShow {
+    font-size: 15px;
+    margin-right: 10px;
+    height: 30px;
+}
+
+.adminPanelButton {
+    height: 30px !important;
+    width: 31px !important;
+    padding: 10px !important;
+    margin-right: 5px !important;
+    padding-bottom: 23px !important;
+    margin-bottom: 4px !important;
+}
+
+.adminPanelDisplayNone {
+    display: none;
+}
+
+.cardStyle {
+    box-shadow: 0px 0px 4px 0px;
+    margin: 10px;
+    max-width: 250px;
+    width: 100%;
+    padding: 10px;
+}
+
+    .cardStyle img {
+        height: 200px;
+        width: 220px;
+    }
+
+    .cardStyle h3 {
+        min-height: 260px;
+        margin-top: 10px;
+    }
+
+.greenButton {
+    background-color: #00aa1596 !important;
+}
+
+.buttonsContainer redButton {
+    background-color: #d0191980 !important;
+}
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+    .cardStyle {
+        box-shadow: 0px 0px 4px 0px;
+        margin: 20px;
+        max-width: 250px;
+        width: 100%;
+        padding: 10px;
+    }
+}
