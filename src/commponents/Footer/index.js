@@ -8,7 +8,7 @@ function Footer() {
                 <i className="facebook f icon" aria-hidden="true"></i>
                 <i className="twitter square icon"></i>
                 <i className="linkedin icon" aria-hidden="true"></i>
-                <h5>©2021 by Restaurant. Proudly created with ProceraSoft</h5>
+                <h5>©2021 my Restaurant</h5>
             </div>
 
         </div>

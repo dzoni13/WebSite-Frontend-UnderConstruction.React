@@ -2,6 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\actions",
     "\\src\\commponents",
     "\\src\\commponents\\AboutPage",
     "\\src\\commponents\\AboutPage\\our-story",
@@ -11,6 +12,6 @@
     "\\src\\commponents\\AdminPanel\\Reservation",
     "\\src\\commponents\\AdminPanel\\Team"
   ],
-  "SelectedNode": "\\src\\commponents\\AboutPage\\our-story\\index.css",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }

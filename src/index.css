@@ -1,3 +1,7 @@
+.mainIndexContainer {
+    overflow-x: hidden;
+}
+
 body {
     padding: 0px !important;
     background-color: #000;
