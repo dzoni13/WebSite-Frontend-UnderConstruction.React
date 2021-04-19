@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import EventsCard from "./eventsCard";
 import "./index.css";
 import { useDispatch } from "react-redux";
@@ -8,17 +8,15 @@ import { loadEventItems } from "../../actions/events";
 
 const Events = ({ eventsItem }) => {
 
-    const dispatch = useDispatch();
+    const stableDispatch = useDispatch()
 
 
     useEffect(() => {
-        dispatch(loadEventItems());
-    }, []);
+        stableDispatch(loadEventItems());
+    }, [stableDispatch]);
 
     function renderItems() {
         return eventsItem.map((item, i) => {
-            console.log("RENDER ITEMS, EVENT CARD: ", item)
-
             return (
                 <EventsCard
                     key={i}
@@ -28,7 +26,6 @@ const Events = ({ eventsItem }) => {
         })
     }
 
-
     return (
         <>
             <p className="upcomingEventsStyle">Upcoming Events</p>
@@ -36,9 +33,6 @@ const Events = ({ eventsItem }) => {
 
                 {renderItems()}
             </div>
-
-
-
         </>)
 };
 

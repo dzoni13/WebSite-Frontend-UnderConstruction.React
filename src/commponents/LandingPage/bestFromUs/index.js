@@ -1,37 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./index.css";
 import {
     loadMenuItems,
 } from "../../../actions/menuItems";
 import BestFromUs from "./BestFromUs";
+import BestFromUsSec from "./BestFromUsSec";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
 
-
-
 function BestFrom({ menuItems }) {
-    const dispatch = useDispatch();
-    console.log(menuItems)
+
+
+
+    const stableDispatch = useDispatch()
+
 
     useEffect(() => {
-        dispatch(loadMenuItems("drinks"));
-    }, []);
+        stableDispatch(loadMenuItems("offer"));
+    }, [stableDispatch]);
+
+
 
     function renderItems() {
         return menuItems.map((item, i) => {
-            return (
-                <BestFromUs
-                    key={i}
-                    item={item}
-                />
-            );
+
+            if (i % 2 === 0) {
+                return (
+                    <BestFromUs
+                        key={i}
+                        item={item}
+                    />
+                );
+            } else {
+                return (
+                    <BestFromUsSec
+                        key={i}
+                        item={item}
+                    />
+                )
+            };
         });
     }
 
-
     return (
         <>
-
+            <div className="bestFromUsContainer">
+                <h1>Chef Recommendation's</h1>
+                <h2>Fresh Cuts</h2>
+                {renderItems()}
+            </div>
         </>
     )
 };

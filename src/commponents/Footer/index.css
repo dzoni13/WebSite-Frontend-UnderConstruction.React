@@ -1,20 +1,19 @@
 .main-footer {
-  margin-top: 50px;
+    padding-top: 5px;
+    height: 50px;
+    box-shadow: -1px 3px 11px 0px;
 }
 
 .footer-text i {
-  margin-left: 3px;
-  width: 30px;
-  height: 30px;
+    margin-left: 3px;
+    width: 30px;
+    height: auto;
 }
 
 .footer-text {
-  text-align: center;
-}
-h5 {
-  margin-top: 0;
+    text-align: center;
 }
 
-.finish {
-  height: 20px;
+h5 {
+    margin-top: 0;
 }

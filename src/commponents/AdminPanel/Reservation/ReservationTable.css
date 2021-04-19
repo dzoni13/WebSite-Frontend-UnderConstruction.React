@@ -1,0 +1,7 @@
+.noteBox {
+    height: 33px;
+    resize: none !important;
+    background: #ffffff1f !important;
+    color: #fff !important;
+    border: none;
+}

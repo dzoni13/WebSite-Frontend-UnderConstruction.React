@@ -4,30 +4,20 @@ import "./bestFromUs.css";
 function BestFromUs(props) {
     return (
         <>
-            <div className="bestFromUsContainer">
-                <h1>Chef Recommendation's</h1>
-                <h3>Fresh Cuts</h3>
-                <div class="ui stackable two column grid bestFromUsColumnGridContainer">
-                    <div class="column bestFromUsImgStyle bestFromUsColumns"></div>
-                    <div class=" column bestFromUsTxtContainer bestFromUsColumns">
-                        <div className="bestFromUsTxtContent">
-                            <p>{props.item.title}</p>
-                            <p>Served All Day</p>
-                            <p>{props.item.description}</p>
-                        </div>
-                    </div>
-                    <div className=" column bestFromUsTxtContainer bestFromUsColumns">
-                        <div className="bestFromUsTxtContent">
-                            <p>{props.item.title}</p>
-                            <p>Served All Day</p>
-                            <p>
-                                {props.item.description}
-                            </p>
-                        </div>
-                    </div>
-                    <div className="column bestFromUsImgStyle2 bestFromUsColumns"></div>
+            <div className="ui stackable two column grid bestFromUsColumnGridContainer">
+                <div className="column bestFromUsImgStyle bestFromUsColumns">
+                    <img alt="Item Img" className="right floated ui image " src={props.item.image} />
                 </div>
+                <div className=" column bestFromUsTxtContainer bestFromUsColumns">
+                    <div className="bestFromUsTxtContent">
+                        <h1>{props.item.title}</h1>
+                        <p>{props.item.short_description}</p>
+                        <p>{props.item.description}</p>
+                    </div>
+                </div>
+
             </div>
+
         </>
     );
 }

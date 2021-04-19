@@ -1,0 +1,45 @@
+.teamCardContainer {
+    max-width: 525px;
+    width: 100%;
+    height: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 60px;
+    overflow: hidden;
+    background-color: #191919;
+}
+
+    .teamCardContainer p {
+        text-align: center;
+        font-size: 22px;
+        font-family: inherit;
+        padding-top: 15px;
+    }
+
+
+.teamCardImgContainer {
+    min-width: 320px;
+    max-height: 400px;
+    max-width: 550px;
+    height: 100%;
+    right: 36px;
+    position: relative;
+    width: auto;
+    margin-bottom: 30px;
+}
+
+
+.shortDescriptionTeam {
+    text-align: center;
+    display: inline-grid;
+    width: 100%;
+}
+
+    .shortDescriptionTeam a {
+        color: #fff;
+        font-size: 20px;
+        padding-left: 10px;
+        font-family: serif;
+        margin-right: 10px;
+        margin-bottom: 40px;
+    }

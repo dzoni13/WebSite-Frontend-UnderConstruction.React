@@ -6,64 +6,65 @@ import { login } from "../../actions/auth";
 import "./index.css";
 
 const Login = ({ login, isAuthenticated }) => {
-    const [formData, setFormData] = useState({
-        email: "",
-        password: "",
-    });
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-    const { email, password } = formData;
+  const { email, password } = formData;
 
-    const onChange = (e) =>
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+  const onChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    const onSubmit = async (e) => {
-        e.preventDefault();
+  const onSubmit = async (e) => {
+    e.preventDefault();
 
-        login(email, password);
-    };
+    login(email, password);
+  };
 
-    if (isAuthenticated) {
-        return <Redirect to="/admin" />;
-    }
+  if (isAuthenticated) {
+    return <Redirect to="/" />;
+  }
 
-    return (
-        <Fragment>
-            <div className="login-form">
-                <h1 className="large text-primary">Sign In</h1>
-                <p className="lead">Sign in Your Account</p>
-                <form className="form" onSubmit={(e) => onSubmit(e)}>
-                    <div className="form-group">
-                        <input
-                            type="email"
-                            placeholder="Email Address"
-                            name="email"
-                            value={email}
-                            onChange={(e) => onChange(e)}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            name="password"
-                            minLength="6"
-                            value={password}
-                            onChange={(e) => onChange(e)}
-                        />
-                    </div>
-
-                    <input type="submit" className="login-btn" value="Login" />
-                </form>
+  return (
+    <Fragment>
+      <div className="loginContainer">
+        <div className="login-form">
+          <h1 className="large text-primary">Sign In</h1>
+          <form className="form" onSubmit={(e) => onSubmit(e)}>
+            <div className="form-group">
+              <input
+                type="email"
+                placeholder="Email Address"
+                name="email"
+                value={email}
+                onChange={(e) => onChange(e)}
+              />
             </div>
-        </Fragment>
-    );
+            <div className="form-group">
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                minLength="6"
+                value={password}
+                onChange={(e) => onChange(e)}
+              />
+            </div>
+
+            <input type="submit" className="login-btn" value="Login" />
+          </form>
+        </div>
+      </div>
+    </Fragment>
+  );
 };
 Login.propTypes = {
-    login: PropTypes.func.isRequired,
-    isAuthenticated: PropTypes.bool,
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
 };
 const mapStateToProps = (state) => ({
-    isAuthenticated: state.auth.isAuthenticated,
+  isAuthenticated: state.auth.isAuthenticated,
 });
 
 export default connect(mapStateToProps, { login })(Login);

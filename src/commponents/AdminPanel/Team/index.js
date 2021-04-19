@@ -1,84 +1,140 @@
-import React, { useState } from "react";
-import data from "./data.json";
+import React, { useEffect, useState } from "react";
+import { NotificationManager } from 'react-notifications';
 import TeamItem from "./TeamItem";
 import DropDown from "../DropDown/index";
-import Footer from "../../Footer/index";
 import "./index.css";
-import axios from "axios";
+import { useDispatch } from "react-redux";
+import { connect } from "react-redux";
+import {
+    loadTeamMembers,
+    addTeamMember,
+    editTeamMember,
+    deleteTeamMember,
+} from "../../../actions/team";
 
-function TeamPanel() {
-    console.log(data);
 
-    const [editableItem, setEditableItem] = useState({
-        name: "",
-        shortDescription: "",
-    });
+const initialState = {
+    _id: null,
+    name: "",
+    short_description: "",
+    description: "",
+    image: ""
+}
+
+const TeamPanel = ({ teamMembers }) => {
+
+    const dispatch = useDispatch();
+
+    const [adminDisplayClass, setAdminDisplayClass] = useState("adminPanel");
+
+    const [editableItem, setEditableItem] = useState(initialState);
+
+    const stableDispatch = useDispatch()
+
+
+    useEffect(() => {
+        stableDispatch(loadTeamMembers());
+    }, [stableDispatch]);
+
+
+
+
+    function renderItems() {
+        return teamMembers.map((item, i) => {
+            return <TeamItem key={i} item={item} editMember={editMember} deleteMember={deleteMember} />;
+        });
+    }
 
     function onChange(event) {
-        console.log(event.target);
         setEditableItem({
             ...editableItem,
             [event.target.name]: event.target.value,
         });
-        console.log(event.target.value);
     }
-    const [formData, setFormData] = useState({
-        name: "",
-        shortDescription: "",
-        image: "",
-    });
-    const { name, shortDescription, image } = setFormData;
 
-    const saveTeam = async (e) => {
-        const newMember = {
-            name,
-            shortDescription,
-            image,
-        };
-
-        try {
-            const config = {
-                headers: {
-                    "Content-Type": "application/json",
-                    "x-auth-token":
-                        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA1MDhmY2JmNGQ1NmY0OWJjMzJmMDAxIn0sImlhdCI6MTYxNzI2NTYyMywiZXhwIjoxNjE3NjI1NjIzfQ.eHUN8NS6W2A2yugOacxezpGZw_eEmG6P7BVH-rr22iA",
-                },
-            };
-            const body = JSON.stringify(newMember);
-            const res = await axios.post("/api/team", body, config);
-            console.log(res.data);
-        } catch (err) {
-            console.log(err.response.data);
+    function addMember(item) {
+        if (item.name === "") {
+            NotificationManager.error('Please enter name.')
+        } else {
+            dispatch(addTeamMember(editableItem)).then(() => {
+                dispatch(loadTeamMembers());
+                setEditableItem(initialState);
+            });
         }
-    };
-
-    function renderItems() {
-        return data.data.map((item, i) => {
-            return <TeamItem key={i} item={item} editItem={editItem} />;
-        });
     }
 
-    function editItem(item) {
+
+    function saveMember(item) {
+        if (item._id === null) {
+            NotificationManager.error('Please Select Item To Edit.')
+        } else {
+            editTeamMember(item).then(() => {
+                NotificationManager.success('Item Edited Succesfuly')
+                dispatch(loadTeamMembers())
+                setEditableItem(initialState)
+            });
+        }
+    }
+
+
+
+    function editMember(item) {
+        if (window.innerWidth < 600) {
+            setAdminDisplayClass("adminPanelDisplay");
+        }
+
         setEditableItem({
             ...editableItem,
+            _id: item._id,
             name: item.name,
-            shortDescription: item.shortDescription,
+            short_description: item.short_description,
+            description: item.description,
             image: item.image,
         });
     }
 
+
+    function deleteMember(item) {
+        deleteTeamMember(item).then(() => {
+            dispatch(loadTeamMembers());
+        });
+    }
+
+    function openForm() {
+        if (window.innerWidth < 600) {
+            setAdminDisplayClass("adminPanelDisplay");
+        }
+
+    }
+
+    function closeForm() {
+        setAdminDisplayClass("adminPanel");
+    }
+
     return (
         <>
-            <DropDown />
+
             <div className="adminPanelContainer">
-                <h3 className="menuH3">TEAM</h3>
-                <div className="adminMenuPanelWraper">
-                    <div className="ui stackable four column grid cardStyleContainer">
+
+                <div>
+                    <DropDown />
+                    <button className="ui teal button buttonAddMobil" onClick={(event) => openForm()}> Add </button>
+                </div>
+
+
+                <div className="adminMenuItemsPanelWraper">
+                    <div className="ui grid cardStyleMenuItemsContainer">
                         {renderItems()}
                     </div>
-                    <div className="adminPanel">
-                        <form class="ui form">
-                            <div class="field">
+
+                    <div className={adminDisplayClass}>
+                        <div className="buttonCloseFormContainer">
+                            <button className=" buttonCloseForm" onClick={(event) => closeForm()}><i className="close icon"></i></button>
+                        </div>
+
+                        <div className="ui form formWrapper">
+
+                            <div className="field">
                                 <input
                                     type="text"
                                     name="name"
@@ -87,14 +143,29 @@ function TeamPanel() {
                                     value={editableItem.name}
                                 />
                             </div>
-                            <div class="field">
+                            <div className="field">
                                 <input
                                     type="text"
-                                    name="shortDescription"
+                                    name="short_description"
                                     placeholder="Short Description..."
                                     onChange={(e) => onChange(e)}
-                                    value={editableItem.shortDescription}
+                                    value={editableItem.short_description}
                                 />
+                            </div>
+                            <div className="field">
+                                <textarea
+                                    className="textArea"
+                                    rows="2"
+                                    type="text"
+                                    placeholder="Description..."
+                                    name="description"
+                                    onChange={(e) => onChange(e)}
+                                    value={editableItem.description}
+
+                                >
+                                    {" "}
+
+                                </textarea>
                             </div>
 
                             {editableItem.image && (
@@ -111,16 +182,24 @@ function TeamPanel() {
                                     type="text"
                                     name="image"
                                     placeholder="Image..."
-                                    //onChange={(e) => onChange(e)}
+                                    onChange={(e) => onChange(e)}
                                     value={editableItem.image}
                                 />
                             </div>
-                            <input
-                                class="ui positive button"
-                                type="submit"
-                                onSubmit={(e) => saveTeam(e)}
-                            ></input>
-                        </form>
+
+                            <button
+                                className="ui positive buttonSave button"
+                                onClick={(event) => saveMember(editableItem)}
+                            >
+                                Save Changes
+                                </button>
+                            <button
+                                className="ui teal button buttonAdd"
+                                onClick={(event) => addMember(editableItem)}
+                            >
+                                Add Item
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,4 +208,11 @@ function TeamPanel() {
     );
 }
 
-export default TeamPanel;
+const mapStateToProps = (state) => ({
+    teamMembers: state.teamReducer.teamMembers,
+});
+
+export default connect(mapStateToProps)(TeamPanel);
+
+
+

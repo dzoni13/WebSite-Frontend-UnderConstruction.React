@@ -2,8 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\reducers"
+    "\\src\\commponents",
+    "\\src\\commponents\\AboutPage",
+    "\\src\\commponents\\AboutPage\\our-story",
+    "\\src\\commponents\\AdminPanel",
+    "\\src\\commponents\\AdminPanel\\DropDown",
+    "\\src\\commponents\\AdminPanel\\Events",
+    "\\src\\commponents\\AdminPanel\\Reservation",
+    "\\src\\commponents\\AdminPanel\\Team"
   ],
-  "SelectedNode": "\\src\\Routes.js",
+  "SelectedNode": "\\src\\commponents\\AboutPage\\our-story\\index.css",
   "PreviewInSolutionExplorer": false
 }

@@ -4,14 +4,13 @@ import {
     MENU_ITEMS_LOADED, MENU_ITEMS_LOADING_FAIL,
 } from "../actions/types.js";
 
-
 const initialState = {
     isFailed: false,
     menuItem: null,
     menuItems: [],
 };
 
-export default function (state = initialState, action) {
+export default function foo(state = initialState, action) {
 
     const { type, payload } = action;
 
@@ -40,6 +39,5 @@ export default function (state = initialState, action) {
             };
         default:
             return state;
-
     }
 }

@@ -2,30 +2,31 @@ import "./Event.css";
 
 function EventItem(props) {
 
-
-
-
-    console.log("event card:", props)
-
     return (
-        <div className="col-4 eventCardStyle">
-            <div className="overlay">
-                <img alt="Item Img" className="right floated ui image " src={props.item.image} />
-                <div className="after"></div>
+
+
+        <div className="col-4 cardStyle">
+            <img alt="event" className="right floated ui image " src={props.item.image} />
+            <div className="header">
+                <h3>{props.item.title}</h3>
             </div>
-            <h3>{props.item.title}</h3>
+            <div className="description">
 
-            <p>{props.item.date}</p>
-            <a>{props.item.time}</a>
+                <p>
+                    {props.item.date}
+                </p>
+                <p>{props.item.time}</p>
 
+            </div>
 
-            <div className="buttonContainer">
-                <div className="ui two buttons">
-                    <div className="ui green button greenButton" onClick={event => props.editItem(props.item)}>Edit</div>
-                    <div className="ui red button redButton" onClick={event => props.deleteItem(props.item)} > Delete</div>
+            <div className="extra content">
+                <div className="ui two buttons buttonsContainer">
+                    <div
+                        className="ui basic green button greenButton"
+                        onClick={() => props.editItem(props.item)} > Edit </div>
+                    <div className="ui basic red button redButton" onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) props.deleteItem(props.item) }}>Delete</div>
                 </div>
             </div>
-
         </div>
     )
 };

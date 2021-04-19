@@ -1,0 +1,203 @@
+.dropbtn-reservation {
+    height: 38px;
+    width: 210px;
+}
+
+.makeReservationStyle {
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 100px;
+    padding-top: 150px;
+    font-family: serif;
+    font-weight: 100;
+}
+
+.reservation-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+select option {
+    height: 40px;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+/*ovo je za padajuci meni na date persons i mobile*/
+.dropdown-content-reservation input {
+    width: 210px;
+    height: 30px;
+    background-color: black;
+    border-style: solid;
+    border-width: thin;
+    border-color: white;
+    color: white;
+}
+
+    .dropdown-content-reservation input:focus {
+        outline: none;
+    }
+/*ovo je za dugme*/
+.calendar input {
+    border-radius: 20px;
+    border: none;
+    width: 210px;
+    background-color: black;
+    border-color: white;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    color: white;
+}
+
+#btn {
+    margin-left: 30px;
+    height: 40px;
+    background-color: white;
+    color: black;
+}
+
+/*ovo je za time*/
+.dropdown-time select {
+    margin-left: 30px;
+    width: 210px;
+    height: 46px;
+    text-align-last: center;
+    padding: 0.2em 0.5em 0.2em 1.5em;
+    background-color: #000;
+    background-image: url(http://iconsetc.com/icons-watermarks/flat-square-white-on-black/bfa/bfa_caret-down/bfa_caret-down_flat-square-white-on-black_512x512.png);
+    background-repeat: no-repeat;
+    background-size: 2.3em auto;
+    background-position: 8.3em 0.2em;
+    font-size: 1em;
+    color: #ffffff;
+}
+
+select {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+.dropdown-reservation {
+    float: left;
+    overflow: hidden;
+    box-shadow: 0px 0px 4px 0px;
+    margin-left: 30px;
+}
+
+    .dropdown-reservation .dropbtn-reservation {
+        font-size: 14px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: #000;
+        font-family: inherit;
+        margin: 0;
+        margin-left: 2px;
+    }
+
+.dropbtn-reservation i {
+    margin-left: 7px;
+}
+
+.dropdown-content-reservation {
+    display: none;
+    position: absolute;
+    background-color: #1f1f1f;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+    .dropdown-content-reservation a {
+        float: none;
+        color: #fff;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+        .dropdown-content-reservation a:hover {
+            background-color: #545151;
+        }
+
+.dropdown-reservation:hover .dropdown-content-reservation {
+    display: block;
+}
+
+@media only screen and (max-width: 1100px) {
+    .dropdown-reservation {
+        margin-top: 20px;
+    }
+
+    .reservation-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .makeReservationStyle {
+        text-align: center;
+        font-size: 40px;
+        padding-bottom: 50px;
+        padding-top: 80px;
+    }
+
+    .dropbtn-reservation {
+        height: 38px;
+        width: 250px;
+        margin-top: 20px;
+    }
+
+    .dropdown-time select {
+        width: 250px;
+        height: 46px;
+        text-align-last: center;
+        margin-top: 20px;
+        padding: 0.2em 0.5em 0.2em 1.5em;
+        background-color: #000;
+        background-image: url(http://iconsetc.com/icons-watermarks/flat-square-white-on-black/bfa/bfa_caret-down/bfa_caret-down_flat-square-white-on-black_512x512.png);
+        background-repeat: no-repeat;
+        background-size: 2.3em auto;
+        background-position: 11.3em 0.3em;
+        font-size: 1em;
+        color: #ffffff;
+    }
+
+    .calendar input {
+        border-radius: 20px;
+        border: none;
+        margin-top: 20px;
+        width: 150px;
+        background-color: black;
+        border-color: white;
+        border-left: 0;
+        border-top: 0;
+        border-right: 0;
+        color: white;
+    }
+
+    .dropdown-content-reservation {
+        display: none;
+        position: absolute;
+        background-color: #1f1f1f;
+        width: 280px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+}

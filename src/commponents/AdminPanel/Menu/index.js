@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { NotificationManager } from 'react-notifications';
 import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
 import MenuItem from "./MenuItem";
@@ -23,38 +24,34 @@ const initialState = {
 }
 
 const MenuPanel = ({ menuItems }) => {
-    console.log("menuItems2222", menuItems);
+
 
     const dispatch = useDispatch();
 
-    const [adminDisplayClass, setAdminDisplayClass] = useState("adminPanel");
+    const stableDispatch = useDispatch()
 
-    const [editButtonActive, setEditButtonActive] = useState({
-        value: false,
-    });
+    const [adminDisplayClass, setAdminDisplayClass] = useState("adminPanel");
 
     const [editableItem, setEditableItem] = useState(initialState);
 
 
     useEffect(() => {
-        dispatch(loadMenuItems("drinks"));
-    }, []);
-
+        stableDispatch(loadMenuItems("drinks"));
+    }, [stableDispatch]);
 
     function getMenuItemByTag(tag) {
+
+        setEditableItem({
+            ...editableItem,
+            tag: tag
+        })
+
         dispatch(loadMenuItems(tag));
     }
 
-    function onChange(event) {
-        setEditableItem({
-            ...editableItem,
-            [event.target.name]: event.target.value,
-        });
-    }
+
 
     function renderItems() {
-        console.log("map:", menuItems);
-
         return menuItems.map((item, i) => {
             return (
                 <MenuItem
@@ -67,20 +64,50 @@ const MenuPanel = ({ menuItems }) => {
         });
     }
 
-    function saveMenuItemEdit(item) {
-        console.log('treba dodati validaciju')
-        editMenuItem(item).then(() => {
-            dispatch(loadMenuItems(item.tag))
-            setEditableItem(initialState)
+    function onChange(event) {
+        setEditableItem({
+            ...editableItem,
+            [event.target.name]: event.target.value,
         });
-
     }
 
     function addItemMenu(item) {
-        console.log('treba dodati validaciju')
-        dispatch(addMenuItem(editableItem)).then(() => {
-            dispatch(loadMenuItems(item.tag));
-            setEditableItem(initialState);
+        if (item.title === "") {
+            NotificationManager.error('Please enter title.')
+        } else {
+            dispatch(addMenuItem(editableItem)).then(() => {
+                dispatch(loadMenuItems(item.tag));
+                setEditableItem(initialState);
+            });
+        }
+    }
+
+    function saveMenuItemEdit(item) {
+        if (item._id === null) {
+            NotificationManager.error('Please Select Item To Edit.')
+        } else {
+            editMenuItem(item).then(() => {
+
+                NotificationManager.success('Item Edited Succesfuly')
+                dispatch(loadMenuItems(item.tag))
+                setEditableItem(initialState)
+            });
+        }
+    }
+
+    function editItem(item) {
+        if (window.innerWidth < 600) {
+            setAdminDisplayClass("adminPanelDisplay");
+        }
+
+        setEditableItem({
+            _id: item._id,
+            title: item.title,
+            short_description: item.short_description,
+            description: item.description,
+            image: item.image,
+            price: item.price,
+            tag: item.tag
         });
     }
 
@@ -103,22 +130,6 @@ const MenuPanel = ({ menuItems }) => {
     }
 
 
-    function editItem(item) {
-        if (window.innerWidth < 600) {
-            setAdminDisplayClass("adminPanelDisplay");
-        }
-
-        setEditableItem({
-            _id: item._id,
-            title: item.title,
-            short_description: item.short_description,
-            description: item.description,
-            image: item.image,
-            price: item.price,
-            tag: item.tag
-        });
-    }
-
     return (
         <>
             <div className="adminPanelContainer">
@@ -128,25 +139,27 @@ const MenuPanel = ({ menuItems }) => {
                     <i className="fa fa-caret-down"></i>
                         </button>
                         <div className="dropdown-content">
-                            <a onClick={(event) => getMenuItemByTag("drinks")}>Drinks</a>
-                            <a onClick={(event) => getMenuItemByTag("appetizers")}>Appetizers</a>
-                            <a onClick={(event) => getMenuItemByTag("ala_carte")}>A la carte</a>
+                            <p onClick={(event) => getMenuItemByTag("drinks")}>Drinks</p>
+                            <p onClick={(event) => getMenuItemByTag("appetizers")}>Appetizers</p>
+                            <p onClick={(event) => getMenuItemByTag("ala_carte")}>A la carte</p>
                         </div>
                     </div>
-                    <button class="ui teal button buttonAddMobil" onClick={(event) => openForm()}> Add </button>
+                    <button className="ui teal button buttonAddMobil" onClick={(event) => openForm()}> Add </button>
                 </div>
                 <DropDown />
                 <div className="adminMenuItemsPanelWraper">
                     <div className="ui grid cardStyleMenuItemsContainer">
+
                         {renderItems()}
+
                     </div>
                     <div className={adminDisplayClass}>
                         <div className="buttonCloseFormContainer">
-                            <button class=" buttonCloseForm" onClick={(event) => closeForm()}><i class="close icon"></i></button>
+                            <button className=" buttonCloseForm" onClick={(event) => closeForm()}><i className="close icon"></i></button>
                         </div>
-                        <div class="ui form formWrapper">
+                        <div className="ui form formWrapper">
                             <div className="titleTag">
-                                <div class="field">
+                                <div className="field">
                                     <input
                                         type="text"
                                         name="title"
@@ -156,7 +169,7 @@ const MenuPanel = ({ menuItems }) => {
                                     />
                                 </div>
                                 <p>.</p>
-                                <div class="field">
+                                <div className="field">
                                     <input
                                         type="text"
                                         name="tag"
@@ -166,7 +179,7 @@ const MenuPanel = ({ menuItems }) => {
                                     />
                                 </div>
                             </div>
-                            <div class="field">
+                            <div className="field">
                                 <input
                                     type="text"
                                     name="short_description"
@@ -188,9 +201,9 @@ const MenuPanel = ({ menuItems }) => {
                                     {" "}
                                 </textarea>
                             </div>
-                            <div class="field">
+                            <div className="field">
                                 <div className="ui right labeled input">
-                                    <label for="amount" class="ui label labelStyle">
+                                    <label htmlFor="amount" className="ui label labelStyle">
                                         $
                                        </label>
                                     <input
@@ -222,13 +235,13 @@ const MenuPanel = ({ menuItems }) => {
                             </div>
 
                             <button
-                                class="ui positive buttonSave button"
+                                className="ui positive buttonSave button"
                                 onClick={(event) => saveMenuItemEdit(editableItem)}
                             >
                                 Save Changes
                                 </button>
                             <button
-                                class="ui teal button buttonAdd"
+                                className="ui teal button buttonAdd"
                                 onClick={(event) => addItemMenu(editableItem)}
                             >
                                 Add Item

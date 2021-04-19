@@ -1,69 +1,55 @@
-.labelCustomStyle {
-    width: auto;
-    height: 36px;
-    left: -8px;
-    background: none !important;
-    font-size: 16px !important;
-    border-color: #ffffff !important;
-    box-shadow: 0px 0px 6px 0px;
-    padding-left: 6px !important;
-    margin-top: 15px !important;
-    margin-bottom: 15px !important;
-    color: #ffffffd6 !important;
-}
-
-.summaryCustomStyle {
-    outline: none;
-    font-weight: 700;
+.menuItemCardStyle {
+    display: inline-flex;
+    height: fit-content;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    max-width: 500px;
+    min-width: 450px;
 }
 
 
-/**********************/
-
-.adminPanelShow {
-    font-size: 15px;
-    margin-right: 10px;
-    height: 30px;
-}
-
-
-
-.adminPanelDisplayNone {
-    display: none;
-}
-
-.cardStyle {
-    box-shadow: 0px 0px 4px 0px;
-    margin: 10px;
-    max-width: 250px;
-    width: 100%;
-    padding: 10px;
-}
-
-    .cardStyle img {
-        height: 200px;
-        width: 220px;
+    .menuItemCardStyle p {
+        font-size: 40px;
+        margin-left: 40px;
+        margin-right: 17px;
+        font-family: cursive;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        height: 70px;
     }
 
-    .cardStyle h3 {
-        min-height: 260px;
-        margin-top: 10px;
+.teamImageContainer {
+    object-fit: cover;
+    height: 111px;
+    padding: 2px;
+    border-radius: 100px;
+    box-shadow: 0px 0px 7px 1px;
+    margin-right: 22px;
+    width: 112px;
+}
+
+
+.titlePriceContainer {
+    display: contents;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 500px) {
+    .menuItemCardStyle {
+        display: block;
+        max-width: 320px;
+        min-width: 300px;
     }
 
-.greenButton {
-    background-color: #00aa1596 !important;
-}
+    .teamImageContainer {
+        margin-left: 30%;
+    }
 
-.buttonsContainer redButton {
-    background-color: #d0191980 !important;
-}
-
-@media only screen and (max-width: 767px) {
-    .cardStyle {
-        box-shadow: 0px 0px 4px 0px;
-        margin: 20px;
-        max-width: 250px;
-        width: 100%;
-        padding: 10px;
+    .titlePriceContainer {
+        display: flex;
     }
 }

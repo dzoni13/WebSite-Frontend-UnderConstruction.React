@@ -3,6 +3,7 @@ import {
     AUTH_ERROR,
     LOGIN_FAIL,
     LOGIN_SUCCESS,
+    LOGOUT,
 } from "../actions/types.js";
 
 const initialState = {
@@ -12,7 +13,7 @@ const initialState = {
     user: null,
 };
 
-export default function (state = initialState, action) {
+export default function foo(state = initialState, action) {
     const { type, payload } = action;
     switch (type) {
         case USER_LOADED:
@@ -34,7 +35,7 @@ export default function (state = initialState, action) {
 
         case AUTH_ERROR:
         case LOGIN_FAIL:
-            console.log("LOGIN FAIL:", payload);
+        case LOGOUT:
             localStorage.removeItem("token");
             return {
                 ...state,

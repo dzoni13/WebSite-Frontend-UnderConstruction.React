@@ -11,6 +11,7 @@
     "google-map-react": "^2.1.9",
     "react": "^17.0.1",
     "react-calendar": "^3.3.1",
+    "react-confirm-alert": "2.6.0",
     "react-dom": "^17.0.1",
     "react-google-maps": "^9.4.5",
     "react-notification": "^6.8.5",
@@ -24,6 +25,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
+    "semantic-ui-react": "^2.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -36,7 +38,14 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "plugins": [
+      "react-hooks"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+    }
   },
   "browserslist": {
     "production": [
@@ -50,5 +59,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.2.0"
+  }
 }

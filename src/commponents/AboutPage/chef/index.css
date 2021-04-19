@@ -1,54 +1,83 @@
-@media only screen and (min-width: 700px) {
-  .main-chef {
-    background-color: black;
-    color: white;
-    position: relative;
+
+
+.ourHistoryContainer {
+    margin: 30px;
     text-align: center;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    margin-top: 30px;
-  }
-  .centered2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: left;
-    font-weight: 500;
-    font-size: 20px;
-    background-color: rgb(19, 19, 19);
-    padding: 30px;
-    height: 250px;
-  }
-  .main-chef img {
-    width: 100%;
-    height: 700px;
-  }
 }
 
-@media only screen and (max-width: 700px) {
-  .main-chef {
-    background-color: black;
-    color: white;
-    position: relative;
+.ourHistoryImgStyle {
+    background-image: url(https://i.pinimg.com/originals/67/a1/21/67a1214e6e0d819509afc27e24710ace.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ourHistoryImgStyle2 {
+    background-image: url(https://en-media.thebetterindia.com/uploads/2019/09/Untitled-design-2019-09-13T182612.683.jpg?compress=true&quality=90&w=480&dpr=2.6 );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.ourHistoryColumns {
+    max-width: 650px;
+    min-height: 460px;
+    padding: 4vw;
+    border: 1vw solid #000;
+    text-align: justify;
+}
+
+
+
+.aboutUsTxtContent {
+    margin-top: 3em;
     text-align: center;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    margin-top: 30px;
-  }
+}
 
-  .centered2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: left;
-    font-weight: 500;
-    font-size: small;
-    width: 90vw;
-  }
+    .aboutUsTxtContent h1 {
+        font-size: 45px;
+        font-family: serif;
+        font-weight: 100;
+        color: #FBD99A;
+        font-style: italic;
+        margin: 0px !important;
+    }
 
-  .main-chef img {
-    width: 100%;
-    height: 30%;
-    filter: brightness(50%);
-  }
+
+
+    .aboutUsTxtContent h2 {
+        font-size: 35px;
+        font-weight: 400;
+        font-family: serif;
+        margin-bottom: 20px;
+    }
+
+    .aboutUsTxtContent h5 {
+        border-top: 2px solid #FBD99A;
+        margin-left: 40%;
+        margin-right: 40%;
+        color: #000;
+    }
+
+
+.ourHistoryColumnGridContainer {
+    justify-content: center;
+    margin-top: 100px !important;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .aboutUsTxtContent {
+        margin-top: 3em;
+        text-align: justify;
+    }
+
+        .aboutUsTxtContent h2 {
+            font-size: 25px;
+        }
+
+    .ourHistoryColumns {
+        min-height: 300px;
+    }
 }

@@ -23,10 +23,24 @@
 
 
     .landingPageTextContainer h1 {
-        font-size: 50px;
+        font-size: 70px;
+        font-family: serif;
+        font-weight: 100;
     }
 
     .landingPageTextContainer h3 {
-        font-size: 20px;
+        font-size: 25px;
         font-weight: 100;
+        font-family: cursive;
+        color: #fcda9a;
     }
+
+@media only screen and (max-width: 600px) {
+    .landingPageTextContainer h1 {
+        font-size: 50px;
+    }
+
+    .landingPageTextContainer {
+        width: auto;
+    }
+}
