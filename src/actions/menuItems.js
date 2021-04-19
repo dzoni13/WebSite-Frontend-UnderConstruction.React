@@ -19,8 +19,7 @@ export const loadAllMenuItems = () => {
                     "x-auth-token": `${token}`,
                 },
             };
-
-            const res = await axios.get(`https://coffee-restaurant-backend.herokuapp.com/api/menuitems/`, config);
+            const res = await axios.get(`https://restaurant-aplication-backend.herokuapp.com/api/menuitems/`, config);
             if (res.status === 200) {
                 dispatch({
                     type: MENU_ITEMS_LOADED,
@@ -50,7 +49,7 @@ export const loadMenuItems = (tag) => {
                 },
             };
 
-            const res = await axios.get(`https://coffee-restaurant-backend.herokuapp.com/api/menuitems/${tag}`, config);
+            const res = await axios.get(`https://restaurant-aplication-backend.herokuapp.com/api/menuitems/${tag}`, config);
             if (res.status === 200) {
                 dispatch({
                     type: MENU_ITEMS_LOADED,
@@ -79,7 +78,7 @@ export const addMenuItem = (item) => {
                     "x-auth-token": `${token}`,
                 },
             };
-            const res = await axios.post("https://coffee-restaurant-backend.herokuapp.com/api/menuitems", item, config);
+            const res = await axios.post("https://restaurant-aplication-backend.herokuapp.com/api/menuitems", item, config);
 
             if (res.status === 200) {
                 NotificationManager.success('Item Added Succesfuly')
@@ -113,7 +112,7 @@ export const editMenuItem = (item) => {
             "x-auth-token": `${token}`,
         },
     };
-    return axios.patch(`https://coffee-restaurant-backend.herokuapp.com/api/menuitems/${item._id}`, item, config);
+    return axios.patch(`https://restaurant-aplication-backend.herokuapp.com/api/menuitems/${item._id}`, item, config);
 };
 
 export const deleteMenuItem = (item) => {
@@ -126,6 +125,6 @@ export const deleteMenuItem = (item) => {
             "x-auth-token": `${token}`,
         },
     };
-    return axios.delete(`https://coffee-restaurant-backend.herokuapp.com/api/menuitems/${item._id}`, config);
+    return axios.delete(`https://restaurant-aplication-backend.herokuapp.com/api/menuitems/${item._id}`, config);
 
 };

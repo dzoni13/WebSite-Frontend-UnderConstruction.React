@@ -20,7 +20,7 @@ export const loadEventItems = () => {
                 },
             };
             const res = await axios.get(
-                "https://coffee-restaurant-backend.herokuapp.com/api/event",
+                "https://restaurant-aplication-backend.herokuapp.com/api/event",
                 config
             );
             if (res.status === 200) {
@@ -55,7 +55,7 @@ export const addEditItem = (item) => {
                 },
             };
 
-            const res = await axios.post("https://coffee-restaurant-backend.herokuapp.com/api/event", item, config);
+            const res = await axios.post("https://restaurant-aplication-backend.herokuapp.com/api/event", item, config);
             if (res.status === 200) {
                 NotificationManager.success('Item Added Succesfuly')
                 dispatch({
@@ -91,7 +91,7 @@ export const editMenuItem = (item) => {
                 "x-auth-token": `${token}`,
             },
         };
-        return axios.patch(`https://coffee-restaurant-backend.herokuapp.com/api/event/${item._id}`, item, config);
+        return axios.patch(`https://restaurant-aplication-backend.herokuapp.com/api/event/${item._id}`, item, config);
     }
 };
 
@@ -107,7 +107,7 @@ export const deleteMenuItem = (item) => {
         },
     };
 
-    return axios.delete(`https://coffee-restaurant-backend.herokuapp.com/api/event/${item._id}`, config);
+    return axios.delete(`https://restaurant-aplication-backend.herokuapp.com/api/event/${item._id}`, config);
 
 
 };

@@ -20,7 +20,7 @@ export const loadTeamMembers = () => {
                 },
             };
             const res = await axios.get(
-                "https://coffee-restaurant-backend.herokuapp.com/api/team",
+                "https://restaurant-aplication-backend.herokuapp.com/api/team",
                 config
             );
             if (res.status === 200) {
@@ -53,7 +53,7 @@ export const addTeamMember = (item) => {
             };
 
             const res = await axios.post(
-                "https://coffee-restaurant-backend.herokuapp.com/api/team",
+                "https://restaurant-aplication-backend.herokuapp.com/api/team",
                 item,
                 config
             );
@@ -91,7 +91,7 @@ export const editTeamMember = (item) => {
             "x-auth-token": `${token}`,
         },
     };
-    return axios.patch(`https://coffee-restaurant-backend.herokuapp.com/api/team/${item._id}`, item, config);
+    return axios.patch(`https://restaurant-aplication-backend.herokuapp.com/api/team/${item._id}`, item, config);
 };
 
 export const deleteTeamMember = (item) => {
@@ -104,7 +104,7 @@ export const deleteTeamMember = (item) => {
     };
 
     return axios.delete(
-        `https://coffee-restaurant-backend.herokuapp.com/api/team/${item._id}`,
+        `https://restaurant-aplication-backend.herokuapp.com/api/team/${item._id}`,
         config
     );
 };
