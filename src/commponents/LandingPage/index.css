@@ -29,15 +29,15 @@
     }
 
     .landingPageTextContainer h3 {
-        font-size: 25px;
+        font-size: 40px;
         font-weight: 100;
-        font-family: cursive;
+        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
         color: #fcda9a;
     }
 
 @media only screen and (max-width: 600px) {
     .landingPageTextContainer h1 {
-        font-size: 50px;
+        font-size: 24px;
     }
 
     .landingPageTextContainer {

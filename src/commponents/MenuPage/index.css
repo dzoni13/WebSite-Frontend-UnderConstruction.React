@@ -15,8 +15,8 @@
 
 
     .overlayMenuPhoto h2 {
-        font-family: cursive;
-        font-size: 31px;
+        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+        font-size: 35px;
         font-weight: 100;
         color: #fcda9a;
         padding-top: 7%;
@@ -24,7 +24,7 @@
 
 
     .overlayMenuPhoto h1 {
-        font-family: cursive;
+        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
         font-weight: 100;
         font-size: 55px;
     }
@@ -48,9 +48,9 @@
 }
 
     .menuLandingText h2 {
-        font-family: cursive;
+        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
         font-weight: 100;
-        font-size: 30px;
+        font-size: 35px;
         color: #fcda9a;
     }
 
@@ -75,8 +75,8 @@
 }
 
     .menuText h4 {
-        font-size: 25px;
-        font-family: cursive;
+        font-size: 33px;
+        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
         width: fit-content;
         padding-bottom: 15px;
         margin-bottom: 30px;

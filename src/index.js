@@ -6,7 +6,7 @@ import App from './App';
 
 ReactDOM.render(
     <React.StrictMode>
-        <div className="mainIndexContainer" >
+        <div className="mainIndexContainer">
             <App />
         </div>
     </React.StrictMode>,

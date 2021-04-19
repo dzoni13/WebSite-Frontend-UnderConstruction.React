@@ -2,16 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\actions",
     "\\src\\commponents",
-    "\\src\\commponents\\AboutPage",
-    "\\src\\commponents\\AboutPage\\our-story",
     "\\src\\commponents\\AdminPanel",
-    "\\src\\commponents\\AdminPanel\\DropDown",
-    "\\src\\commponents\\AdminPanel\\Events",
-    "\\src\\commponents\\AdminPanel\\Reservation",
-    "\\src\\commponents\\AdminPanel\\Team"
+    "\\src\\commponents\\AdminPanel\\SpecialOffer",
+    "\\src\\commponents\\AdminPanel\\Team",
+    "\\src\\commponents\\BookTable",
+    "\\src\\commponents\\LandingPage",
+    "\\src\\commponents\\MenuPage",
+    "\\src\\commponents\\TeamMembers"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\src\\commponents\\Events\\eventsCard.js",
   "PreviewInSolutionExplorer": false
 }

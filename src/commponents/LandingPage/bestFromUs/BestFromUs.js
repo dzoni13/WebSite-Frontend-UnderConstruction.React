@@ -11,7 +11,7 @@ function BestFromUs(props) {
                 <div className=" column bestFromUsTxtContainer bestFromUsColumns">
                     <div className="bestFromUsTxtContent">
                         <h1>{props.item.title}</h1>
-                        <p>{props.item.short_description}</p>
+                        <h2>{props.item.short_description}</h2>
                         <p>{props.item.description}</p>
                     </div>
                 </div>

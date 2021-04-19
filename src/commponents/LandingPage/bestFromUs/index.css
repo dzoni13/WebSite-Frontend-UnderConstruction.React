@@ -5,12 +5,13 @@
 
     .bestFromUsContainer h1 {
         font-family: serif;
-        font-size: 30px;
+        font-size: 40px;
         font-weight: 500;
     }
 
     .bestFromUsContainer h2 {
-        font-family: cursive;
+        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
         font-weight: 100;
+        font-size: 35px;
         color: #fcda9a;
     }

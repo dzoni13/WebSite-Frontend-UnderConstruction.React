@@ -20,7 +20,7 @@ export const loadReservationItems = () => {
                 },
             };
             const res = await axios.get(
-                "https://restaurant-aplication-backend.herokuapp.com/api/reservation",
+                "https://coffee-restaurant-backend.herokuapp.com/api/reservation",
                 config
             );
             if (res.status === 200) {
@@ -54,7 +54,7 @@ export const addReservation = (item) => {
                 },
             };
             const body = JSON.stringify(item);
-            const res = await axios.post("https://restaurant-aplication-backend.herokuapp.com/api/reservation", body, config);
+            const res = await axios.post("https://coffee-restaurant-backend.herokuapp.com/api/reservation", body, config);
 
             if (res.status === 200) {
                 NotificationManager.success('Reservation Aded Succesfuly')
@@ -86,7 +86,7 @@ export const editResItem = (item) => {
             "x-auth-token": `${token}`,
         },
     };
-    return axios.patch(`https://restaurant-aplication-backend.herokuapp.com/api/reservation/${item._id}`, item, config);
+    return axios.patch(`https://coffee-restaurant-backend.herokuapp.com/api/reservation/${item._id}`, item, config);
 };
 
 export const deleteReservation = (item) => {
@@ -98,7 +98,7 @@ export const deleteReservation = (item) => {
         },
     };
 
-    return axios.delete(`https://restaurant-aplication-backend.herokuapp.com/api/reservation/${item._id}`, config);
+    return axios.delete(`https://coffee-restaurant-backend.herokuapp.com/api/reservation/${item._id}`, config);
 }
 
 

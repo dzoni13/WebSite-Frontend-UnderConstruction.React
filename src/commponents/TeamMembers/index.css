@@ -15,9 +15,9 @@
     }
 
     .theTeam h2 {
-        font-size: 35px;
-        font-family: serif;
-        font-weight: 100;
+        font-size: 45px;
+        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+        font-weight: 300;
         color: #FBD99A;
         font-style: italic;
     }
@@ -44,7 +44,7 @@
 }
 
     .upcomingTeamsStyle h2 {
-        font-family: serif;
+        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
         font-weight: 100;
         font-size: 35px;
         color: #FBD99A;
