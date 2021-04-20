@@ -1,115 +1,107 @@
 .menuContainerImg {
-    background-image: url("./image/menuCoverPhoto.jpg");
-    height: 406px;
-    width: 100%;
-    background-size: cover;
+  background-image: url("./image/menuCoverPhoto.jpg");
+  height: 406px;
+  width: 100%;
+  background-size: cover;
 }
 
 .overlayMenuPhoto {
-    position: relative;
-    background: #00000094;
-    width: 100%;
-    height: 102%;
-    text-align: center;
+  position: relative;
+  background: #00000094;
+  width: 100%;
+  height: 102%;
+  text-align: center;
 }
 
+.overlayMenuPhoto h2 {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 35px;
+  font-weight: 100;
+  color: #fcda9a;
+  padding-top: 7%;
+}
 
-    .overlayMenuPhoto h2 {
-        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-        font-size: 35px;
-        font-weight: 100;
-        color: #fcda9a;
-        padding-top: 7%;
-    }
-
-
-    .overlayMenuPhoto h1 {
-        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-        font-weight: 100;
-        font-size: 55px;
-    }
+.overlayMenuPhoto h1 {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-weight: 100;
+  font-size: 55px;
+}
 
 .menuPageStyleContainer {
-    width: 100%;
-    height: auto;
-    margin-top: 5px !important;
-    padding-left: 20px !important;
-    align-content: flex-start !important;
+  width: 100%;
+  height: auto;
+  margin-top: 5px !important;
+  padding-left: 20px !important;
+  align-content: flex-start !important;
 }
-
-
-
 
 .menuLandingText {
-    text-align: center;
-    margin-bottom: 5%;
-    width: 100vw;
-    margin-top: 50px;
+  text-align: center;
+  margin-bottom: 5%;
+  width: 100vw;
+  margin-top: 50px;
 }
 
-    .menuLandingText h2 {
-        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-        font-weight: 100;
-        font-size: 35px;
-        color: #fcda9a;
-    }
+.menuLandingText h2 {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-weight: 100;
+  font-size: 35px;
+  color: #fcda9a;
+}
 
-
-    .menuLandingText h1 {
-        font-family: serif;
-        font-weight: 100;
-        font-size: 40px
-    }
+.menuLandingText h1 {
+  font-family: serif;
+  font-weight: 100;
+  font-size: 40px;
+}
 
 .menuParagrph {
-    text-align: -webkit-center;
+  text-align: -webkit-center;
+  font-size: 16px;
 }
 
-    .menuParagrph p {
-        max-width: 1000px;
-    }
-
+.menuParagrph p {
+  max-width: 1000px;
+}
 
 .menuText {
-    width: 100vw;
+  width: 100vw;
 }
 
-    .menuText h4 {
-        font-size: 33px;
-        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-        width: fit-content;
-        padding-bottom: 15px;
-        margin-bottom: 30px;
-        border-bottom: 2px solid #fcda9a;
-        left: 10vw;
-        position: relative;
-    }
-
+.menuText h4 {
+  font-size: 33px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  width: fit-content;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #fcda9a;
+  left: 10vw;
+  position: relative;
+}
 
 .drinksPhoto {
-    height: 0px;
+  height: 0px;
 }
 
-    .drinksPhoto img {
-        max-width: 1000px;
-        width: 100%;
-        margin-left: 46%;
-    }
+.drinksPhoto img {
+  max-width: 1000px;
+  width: 100%;
+  margin-left: 46%;
+}
 
 .renderContainer {
-    width: 66%;
-    position: relative;
-    left: 10vw;
+  width: 66%;
+  position: relative;
+  left: 10vw;
 }
 
-
 @media only screen and (max-width: 600px) {
-    .renderContainer {
-        width: 100%;
-        left: 0vw;
-    }
+  .renderContainer {
+    width: 100%;
+    left: 0vw;
+  }
 
-    .menuText h4 {
-        left: 0vw;
-    }
+  .menuText h4 {
+    left: 0vw;
+  }
 }
